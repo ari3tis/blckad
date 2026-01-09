@@ -278,3 +278,88 @@ dzen.ru##:xpath(//a[contains(@href, 't.mail.ru/redir')]/ancestor::div[1])
 ! Hide sponsored content
 dzen.ru##.feed__item:has-text(/реклама|спонсор|advert|promo|партнер/i)
 dzen.ru##div:has-text(/Реклама|Спонсорский материал/)
+
+# Правильные правила для рекламы (ваш случай)
+||t.mail.ru/redir^$domain=dzen.ru
+||dzen.ru/api/ads^
+||dzen.ru/*/promo^
+
+# ===== VK РЕКЛАМА В DZEN =====
+# Блокировать VK рекламные ссылки в Dzen
+||vk.com/vk_*$domain=dzen.ru
+||vk.com/*utm_source=vkads*$domain=dzen.ru
+||vk.com/*utm_campaign=VkAds_*$domain=dzen.ru
+||vk.com/*force_redirect_to_app=1*$domain=dzen.ru
+
+# Блокировать все VK рекламные домены
+||vkads.ru^$domain=dzen.ru
+||vk-apps.com^$domain=dzen.ru
+||vkuser.net^$domain=dzen.ru
+||vkuservideo.net^$domain=dzen.ru
+||vk-cdn.net^$domain=dzen.ru
+||vk.me^$domain=dzen.ru
+||vk.cc^$domain=dzen.ru
+
+! Блокировать по CSS-классам
+dzen.ru##.news-site--tzqY-link__adLink-1T
+dzen.ru##[class*="adLink"]
+dzen.ru##[class*="ad-link"]
+dzen.ru##a[href*="vk.com/vk_"]
+
+! Блокировать по UTM-меткам
+dzen.ru##a[href*="utm_source=vkads"]
+dzen.ru##a[href*="utm_campaign=VkAds"]
+dzen.ru##a[href*="force_redirect_to_app=1"]
+
+! Удалить родительские контейнеры
+dzen.ru##div:has(> a.news-site--tzqY-link__adLink-1T)
+dzen.ru##:xpath(//a[contains(@class, 'adLink')]/ancestor::div[1])
+
+# Блокировать все VK Ads домены
+||ads.vk.com^
+||an.vk.com^
+||ads-core.vk.com^
+||ads-app.vk.com^
+||tracking.vk.com^
+||stats.vk.com^
+||metric.vk.com^
+||pixel.vk.com^
+||log.vk.com^
+||api.vk.com/ads^
+||vk.com/ads^
+
+# Блокировать любые UTM-метки (универсально)
+||*utm_source=*$domain=dzen.ru
+||*utm_campaign=*$domain=dzen.ru
+||*utm_medium=*$domain=dzen.ru
+||*utm_content=*$domain=dzen.ru
+||*utm_term=*$domain=dzen.ru
+
+# Блокировать параметры редиректов
+||*force_redirect_to_app=*$domain=dzen.ru
+||*redirect=*$domain=dzen.ru
+||*go=*$domain=dzen.ru
+||*click=*$domain=dzen.ru
+
+# ===== ПОЛНАЯ БЛОКИРОВКА VK ADS =====
+# Основные VK рекламные домены
+||vkads.ru^$domain=dzen.ru
+||ads.vk.com^$domain=dzen.ru
+||an.vk.com^$domain=dzen.ru
+
+# VK рекламные ссылки с параметрами
+||vk.com/*utm_*$domain=dzen.ru
+||vk.com/*campaign*$domain=dzen.ru
+||vk.com/*ads*$domain=dzen.ru
+||vk.com/*promo*$domain=dzen.ru
+
+# VK редиректы
+||vk.com/*force_redirect*$domain=dzen.ru
+||vk.com/*redirect*$domain=dzen.ru
+||vk.com/*go/*$domain=dzen.ru
+||vk.com/*click/*$domain=dzen.ru
+
+# VK CDN для рекламы
+||vk-cdn.net/*ads*$domain=dzen.ru
+||vkuser.net/*ad*$domain=dzen.ru
+||vkuservideo.net/*ad*$domain=dzen.ru
