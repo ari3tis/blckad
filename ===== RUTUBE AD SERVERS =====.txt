@@ -64,3 +64,5 @@
 ||mraid.*.rutube.ru^
 ||vast.rutube.ru^
 ||vpaid.rutube.ru^
+
+||avatars.mds.yandex.net
