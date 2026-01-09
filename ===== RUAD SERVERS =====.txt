@@ -163,16 +163,6 @@
 ||mail.ru/redir/*$domain=dzen.ru
 ||redir.mail.ru/*$domain=dzen.ru
 
-# All mail.ru redirect/tracking services
-||t.mail.ru^$domain=dzen.ru
-||mail.ru/redir^
-||redirect.mail.ru^
-||clck.mail.ru^
-||ads.mail.ru^
-||ad.mail.ru^
-||promo.mail.ru^$domain=dzen.ru
-||mail.ru/promo^$domain=dzen.ru
-
 ! Dzen desktop ads by class
 dzen.ru##.dzen-desktop--ad-link__adLink-MN
 dzen.ru##a[class*="ad-link"]
@@ -189,19 +179,6 @@ zen.yandex.ru##.adv-item
 ||dzen.ru/static/desktop/ads^
 ||dzen.ru/js/ads/desktop^
 ||dzen.ru/css/ads/desktop^
-
-# Mail.ru ad domains
-||mail.ru/ads^
-||ads.mail.ru^
-||ad.mail.ru^
-||an.mail.ru^
-||adx.mail.ru^
-||ads.adfox.ru^$domain=mail.ru
-||mycdn.me^$domain=mail.ru
-||mail.ru/pixel^
-||mail.ru/counter^
-||top-fwz1.mail.ru^
-||top.mail.ru^
 
 # Russian ad exchanges
 ||adfox.ru^
@@ -363,3 +340,123 @@ dzen.ru##:xpath(//a[contains(@class, 'adLink')]/ancestor::div[1])
 ||vk-cdn.net/*ads*$domain=dzen.ru
 ||vkuser.net/*ad*$domain=dzen.ru
 ||vkuservideo.net/*ad*$domain=dzen.ru
+
+# ===== MAIL.RU ОСНОВНЫЕ РЕКЛАМНЫЕ ДОМЕНЫ =====
+||mail.ru/ads^
+||ads.mail.ru^
+||ad.mail.ru^
+||an.mail.ru^
+||adx.mail.ru^
+||adv.mail.ru^
+||promo.mail.ru^
+||banner.mail.ru^
+||commercial.mail.ru^
+||track.mail.ru^
+||counter.mail.ru^
+||pixel.mail.ru^
+||beacon.mail.ru^
+||log.mail.ru^
+||metric.mail.ru^
+||stat.mail.ru^
+||analytics.mail.ru^
+||stats.mail.ru^
+
+# ===== MAIL.RU РЕДИРЕКТЫ И ТРЕКИНГ =====
+||t.mail.ru^
+||t.mail.ru/redir^
+||mail.ru/redir^
+||redir.mail.ru^
+||click.mail.ru^
+||clck.mail.ru^
+||go.mail.ru^
+||link.mail.ru^
+||url.mail.ru^
+||rd.mail.ru^
+||redirect.mail.ru^
+||goto.mail.ru^
+
+# ===== MAIL.RU CDN И РЕКЛАМНЫЕ СЕТИ =====
+||mycdn.me^
+||mycdn.me/ads^
+||mycdn.me/banners^
+||mycdn.me/promo^
+||imgsmail.ru^
+||foto.mail.ru^
+||video.mail.ru/ads^
+||games.mail.ru/ads^
+||news.mail.ru/ads^
+||lady.mail.ru/ads^
+||deti.mail.ru/ads^
+||hi-tech.mail.ru/ads^
+||auto.mail.ru/ads^
+
+# ===== СПЕЦИФИЧНЫЕ РЕКЛАМНЫЕ ПОДДОМЕНЫ =====
+||top-fwz1.mail.ru^
+||top.mail.ru^
+||adriver.mail.ru^
+||adfox.mail.ru^
+||ads.adfox.ru^$domain=mail.ru
+||content.adfox.ru^$domain=mail.ru
+||an.yandex.ru^$domain=mail.ru
+||direct.yandex.ru^$domain=mail.ru
+||vk.com^$domain=mail.ru
+||ok.ru^$domain=mail.ru
+
+# ===== MAIL.RU РЕКЛАМА В DZEN =====
+# Основные редиректы
+||t.mail.ru^$domain=dzen.ru
+||mail.ru/redir^$domain=dzen.ru
+||redir.mail.ru^$domain=dzen.ru
+
+# Специфичные пути
+||mail.ru/*dzen*^
+||mail.ru/*zen*^
+||mail.ru/*реклама*^
+||mail.ru/*advert*^
+||mail.ru/*promo*^
+||mail.ru/*banner*^
+
+# ===== MAIL.RU РЕКЛАМА НА ДРУГИХ САЙТАХ =====
+||t.mail.ru^$domain=rambler.ru
+||mail.ru/redir^$domain=rambler.ru
+
+||t.mail.ru^$domain=lenta.ru
+||mail.ru/redir^$domain=lenta.ru
+
+||t.mail.ru^$domain=gazeta.ru
+||mail.ru/redir^$domain=gazeta.ru
+
+||t.mail.ru^$domain=newsru.com
+||mail.ru/redir^$domain=newsru.com
+
+# Для всех русских новостных сайтов
+||t.mail.ru^$domain=~.*\.ru
+||mail.ru/redir^$domain=~.*\.ru
+
+! ===== MAIL.RU ЭЛЕМЕНТЫ =====
+! Блокировать рекламные контейнеры
+*##div[class*="mail.ru"]
+*##div[class*="mail-ru"]
+*##div[class*="mail"]
+*##div[id*="mail.ru"]
+*##div[id*="mail-ru"]
+
+! Скрыть рекламные iframe
+*##iframe[src*="mail.ru"]
+*##iframe[src*="mycdn.me"]
+*##iframe[src*="ads.mail.ru"]
+
+! Блокировать по ссылкам
+*##a[href*="t.mail.ru/redir"]
+*##a[href*="mail.ru/redir"]
+*##a[href*="clck.mail.ru"]
+*##a[href*="click.mail.ru"]
+
+! Скрыть баннеры
+mail.ru##.banner
+mail.ru##.advert
+mail.ru##.promo
+mail.ru##.commercial
+mail.ru##.ads
+mail.ru##.adv
+
