@@ -172,3 +172,109 @@
 ||ad.mail.ru^
 ||promo.mail.ru^$domain=dzen.ru
 ||mail.ru/promo^$domain=dzen.ru
+
+! Dzen desktop ads by class
+dzen.ru##.dzen-desktop--ad-link__adLink-MN
+dzen.ru##a[class*="ad-link"]
+dzen.ru##[class*="adLink"]
+dzen.ru##.dzen-desktop--ad-link
+dzen.ru##div[class*="ad-container"]
+zen.yandex.ru##.zen-page__adv
+zen.yandex.ru##.adv-item
+
+# Block Dzen desktop ad API endpoints
+||dzen.ru/api/v3/desktop/ads^
+||dzen.ru/api/v3/widget/ad^
+||dzen.ru/desktop/ads^
+||dzen.ru/static/desktop/ads^
+||dzen.ru/js/ads/desktop^
+||dzen.ru/css/ads/desktop^
+
+# Mail.ru ad domains
+||mail.ru/ads^
+||ads.mail.ru^
+||ad.mail.ru^
+||an.mail.ru^
+||adx.mail.ru^
+||ads.adfox.ru^$domain=mail.ru
+||mycdn.me^$domain=mail.ru
+||mail.ru/pixel^
+||mail.ru/counter^
+||top-fwz1.mail.ru^
+||top.mail.ru^
+
+# Russian ad exchanges
+||adfox.ru^
+||adriver.ru^
+||mycdn.me^
+||rambler.ru^
+||smi2.ru^
+||mediascope.net^
+||video.unity3d.com^$domain=dzen.ru
+||an.yandex.ru^$domain=dzen.ru
+
+# ===== DZEN + MAIL.RU AD BLOCK =====
+# Mail.ru redirect ads
+||t.mail.ru^$domain=dzen.ru
+||mail.ru/redir^$domain=dzen.ru
+
+# Dzen desktop ads
+||dzen.ru/*/ad-link^
+||dzen.ru/api/v3/launcher/ads^
+||dzen.ru/desktop/ads^
+
+# CSS class patterns (for browser extensions)
+dzen.ru##[class*="ad-link"]
+dzen.ru##[class*="adLink"]
+dzen.ru##[class*="advert"]
+dzen.ru##[class*="banner"]
+dzen.ru##[class*="promo"]
+
+# Yandex + Mail.ru ad networks
+||an.yandex.ru^$domain=dzen.ru
+||adfox.ru^$domain=dzen.ru
+||mycdn.me^$domain=dzen.ru
+
+# Complete Russian ad network block for Dzen
+||adfox.ru^$domain=dzen.ru
+||adriver.ru^$domain=dzen.ru
+||mycdn.me^$domain=dzen.ru
+||rambler.ru^$domain=dzen.ru
+||smi2.ru^$domain=dzen.ru
+||mediascope.net^$domain=dzen.ru
+||vk.com^$domain=dzen.ru
+||ok.ru^$domain=dzen.ru
+||an.yandex.ru^$domain=dzen.ru
+||yandexadexchange.net^$domain=dzen.ru
+||direct.yandex.ru^$domain=dzen.ru
+
+# Block ALL t.mail.ru redirects with Dzen parameters
+||t.mail.ru/redir/*AADP_*$domain=dzen.ru
+||t.mail.ru/redir/*:2Vtzq*$domain=dzen.ru
+
+# Block common Dzen ad redirect patterns
+/redir\/[A-Z0-9_:-]{500,}/$domain=dzen.ru
+/t\.mail\.ru\/redir\/[A-Z]{4}_/$domain=dzen.ru
+
+! Prevent ad scripts from loading
+dzen.ru##^script:inject(abort-current-inline-script.js, JSON.parse, ads)
+dzen.ru##^script:inject(abort-current-inline-script.js, adfox)
+dzen.ru##^script:inject(abort-current-inline-script.js, mail.ru)
+dzen.ru##^script:inject(abort-current-inline-script.js, yandexContext)
+
+! Block Dzen desktop ad containers
+dzen.ru##.dzen-desktop--ad-link
+dzen.ru##.dzen-desktop--ad-link__adLink-MN
+dzen.ru##a[class*="ad-link"]
+dzen.ru##[class*="adLink"]
+dzen.ru##div[data-testid*="ad"]
+dzen.ru##div[data-testid*="banner"]
+
+! Block empty ad containers
+dzen.ru##[class]:empty
+dzen.ru##div:has(> a[href*="t.mail.ru/redir"])
+dzen.ru##:xpath(//a[contains(@href, 't.mail.ru/redir')]/ancestor::div[1])
+
+! Hide sponsored content
+dzen.ru##.feed__item:has-text(/реклама|спонсор|advert|promo|партнер/i)
+dzen.ru##div:has-text(/Реклама|Спонсорский материал/)
