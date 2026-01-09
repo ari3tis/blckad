@@ -1,0 +1,66 @@
+# ===== RUTUBE AD SERVERS =====
+||rutube.ru/*advert^
+||rutube.ru/api/adv/^
+||rutube.ru/play/embed/*/advert^
+||ads.rutube.ru^
+||ads.*.rutube.ru^
+||ad.rutube.ru^
+||ad.*.rutube.ru^
+||adv.rutube.ru^
+||adv.*.rutube.ru^
+||video.rutube.ru/*ad^
+||pubads.rutube.ru^
+||static.rutube.ru/adv/^
+||rutube.ru/cdn/adv/^
+||pixel.rutube.ru^
+||tracking.rutube.ru^
+||analytics.rutube.ru^
+||metrics.rutube.ru^
+
+# Yandex video ads (Rutube uses Yandex ad network)
+||an.yandex.ru^
+||yandexadexchange.net^
+||yandexvideo.net^
+||video-ad.yandex.ru^
+||mc.yandex.ru^$domain=rutube.ru
+
+# Third-party ad networks used by Rutube
+||mycdn.me^$domain=rutube.ru
+||adfox.ru^$domain=rutube.ru
+||adriver.ru^$domain=rutube.ru
+||ads.adfox.ru^
+||ads.adriver.ru^
+||mediascope.ru^$domain=rutube.ru
+||rambler.ru^$domain=rutube.ru
+||rambler.media^$domain=rutube.ru
+
+# Block pre-roll/mid-roll ads
+||rutube.ru/play/embed/*/ad$
+||rutube.ru/video/embed/*/ad/
+||rutube.ru/api/video/*/ad/
+||rutube.ru/adv/
+
+# Block overlay/banner ads
+||rutube.ru/promo/
+||rutube.ru/banner/
+||rutube.ru/static/banners/
+||rutube.ru/*/banner/
+
+# Block tracking/analytics
+||rutube.ru/counter/
+||rutube.ru/log/
+||rutube.ru/stat/
+||rutube.ru/metrics/
+||rutube.ru/collect/
+
+# Rutube mobile API ads
+||api.rutube.ru/adv/
+||api.rutube.ru/video/*/advert/
+||mobile.rutube.ru/ads/
+||app.rutube.ru/ad/
+
+# Mobile ad networks
+||mraid.rutube.ru^
+||mraid.*.rutube.ru^
+||vast.rutube.ru^
+||vpaid.rutube.ru^
