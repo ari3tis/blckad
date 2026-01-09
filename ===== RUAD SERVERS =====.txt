@@ -157,3 +157,18 @@
 ||outbrain.com^$domain=dzen.ru
 ||revcontent.com^$domain=dzen.ru
 
+# Block mail.ru redirect ads in Dzen
+||t.mail.ru/redir/*$domain=dzen.ru
+||t.mail.ru/redir/*$domain=zen.yandex.ru
+||mail.ru/redir/*$domain=dzen.ru
+||redir.mail.ru/*$domain=dzen.ru
+
+# All mail.ru redirect/tracking services
+||t.mail.ru^$domain=dzen.ru
+||mail.ru/redir^
+||redirect.mail.ru^
+||clck.mail.ru^
+||ads.mail.ru^
+||ad.mail.ru^
+||promo.mail.ru^$domain=dzen.ru
+||mail.ru/promo^$domain=dzen.ru
